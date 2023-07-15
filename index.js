@@ -4,8 +4,7 @@ const app = express();
 const port = 3000;
 
 const client = redis.createClient({
-    host: process.env.REDIS_HOST || "localhost",
-    port: "6379",
+    url: process.env.REDIS_URL ?? "redis://localhost:6379"
 });
 
 client.on("error", (error) => {
